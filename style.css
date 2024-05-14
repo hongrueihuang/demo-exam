@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper .menu {
+    width: 360px;
+    background-color: white;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper .menu .menu-title {
+    margin-bottom: 40px;
+}
+
+.wrapper .menu .menu-list {
+    list-style: none;
+}
+
+.menu-header .menu-btn {
+    display: none;
+}
+
+.wrapper .menu .menu-list li {
+    margin-bottom: 20px;
+}
+
+.menu-header {
+    position: relative;
+}
+
+.menu-header .menu-title {
+    width: 100%;
+}
+
+.menu-header .bird-icon {
+    position: absolute;
+    top: 0;
+    right: -120px;
+    z-index: 1;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.menu-list a:hover, .menu-list a.active{
+    color: #AA6666;
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+}
+
+.banner {
+    position: relative;
+    flex: 1;
+}
+
+.banner .banner-img {
+    width: 100%;
+    display: block;
+    min-height: 620px;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+
+.banner .banner-content {
+    position: absolute;
+    bottom: 40px;
+    text-align: right;
+    color: white;
+    right: 40px;
+}
+
+.banner .banner-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.intro {
+    padding: 40px;
+    background-color: #DCCCBC;
+}
+
+.intro .intro-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro .intro-list .intro-list__item {
+    width: 30%;
+    margin: 0 3.33%;
+    text-align: center;
+    display: flex;
+}
+
+.intro-list__item h3 {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.intro-list__item h3::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    z-index: -1;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #AA6666;
+}
+
+.bird-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.bird-body {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bird-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background-color: #333333;
+    border-radius: 0 50% 0 0;
+}
+
+.bird-eye {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    width: 10px;
+    height: 10px;
+    background-color: #333333;
+    border-radius: 50%;
+}
+
+.bird-beak {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    width: 50%;
+    height: 20%;
+    background-color: #333333;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .wrapper .menu {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-header .menu-btn {
+        display: inline-block;
+        padding: 5px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .wrapper .menu-header .menu-title {
+        margin: 0;
+        width: auto;
+    }
+
+    .wrapper .menu-header .bird-icon {
+        position: static;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .menu-list.active {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .intro .intro-list {
+        flex-direction: column;
+    }
+
+    .intro .intro-list .intro-list__item {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
